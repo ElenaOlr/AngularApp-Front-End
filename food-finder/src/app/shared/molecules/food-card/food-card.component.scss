@@ -1,0 +1,76 @@
+@import '../../../../colors';
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 25vw;
+  height: 80vh;
+  min-width: 280px;
+  min-height: 350px;
+  max-height: 700px;
+  background-color: $white;
+  backface-visibility: visible;
+  border-radius: 20px;
+  border: 0.1px solid $primary-darker;
+  color: $primary-darker;
+  &__title {
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+  }
+  &__description {
+    text-align: center;
+    font-size: 13px;
+
+    &-name {
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    &-details {
+      display: grid;
+      grid-template-areas: 'price  quantity';
+      justify-content: space-evenly;
+
+      &-price {
+        grid-area: price;
+      }
+
+      &-quantity {
+        grid-area: quantity;
+      }
+    }
+  }
+  &__buttons {
+    grid-area: social;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-left: 10px;
+  }
+  &__image {
+    width: 100%;
+    height: 80%;
+    border-top-left-radius: 19px;
+    border-top-right-radius: 19px;
+  }
+  &--empty {
+    opacity: 0;
+  }
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 900px) {
+  .card {
+    width: 20vw;
+    height: 70vh;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .card {
+    width: 20vw;
+    height: 70vh;
+  }
+}

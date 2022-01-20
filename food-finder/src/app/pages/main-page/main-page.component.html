@@ -1,0 +1,10 @@
+<app-header [loggedIn]="true" (onLogOutClick)="logOut()"></app-header>
+<div class="main-page">
+  <div class="main-page__tab-group">
+    <app-control-panel (handleFavoritesGroup)="getFavoritesGroup($event)"></app-control-panel>
+  </div>
+  <div class="main-page__app-carousel">
+    <app-carousel [favoriteList]="favoritesGroup"></app-carousel>
+  </div>
+</div>
+<app-footer></app-footer>

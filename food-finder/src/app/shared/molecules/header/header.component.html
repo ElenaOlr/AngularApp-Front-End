@@ -1,0 +1,24 @@
+<header class="header">
+  <app-icon-button class="header__logo" icon="button__logo" customClass="button-logo"></app-icon-button>
+  <div class="header__buttons">
+    <app-avatar *ngIf="loggedIn" class="header__avatar"></app-avatar>
+    <app-button
+      *ngIf="!loggedIn"
+      id="loginButton"
+      modifier="image-right round uppercase"
+      image="/assets/img/button__login.svg"
+      imageSize="22"
+      [label]="logIn"
+    >
+    </app-button>
+    <app-button
+      *ngIf="loggedIn"
+      modifier="image-right round uppercase"
+      image="/assets/img/button__logout.svg"
+      imageSize="22"
+      [label]="logOut"
+      (onButtonClick)="handleLogoutClick()"
+    >
+    </app-button>
+  </div>
+</header>

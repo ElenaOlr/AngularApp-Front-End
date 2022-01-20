@@ -1,0 +1,20 @@
+<footer class="footer">
+  <span class="footer__copyrights">{{ copyrightText }} </span>
+  <div class="footer__social">
+    <app-icon-button
+      icon="button__facebook"
+      customClass="button-social"
+      (onClickEvent)="goToFacebook()"
+    ></app-icon-button>
+    <app-icon-button
+      icon="button__instagram"
+      customClass="button-social"
+      (onClickEvent)="goToInstagram()"
+    ></app-icon-button>
+    <app-icon-button
+      icon="button__linkedln"
+      customClass="button-social"
+      (onClickEvent)="goToLinkedln()"
+    ></app-icon-button>
+  </div>
+</footer>

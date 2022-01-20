@@ -1,0 +1,19 @@
+<div class="control-panel__container">
+  <app-tab-group>
+    <app-tab [label]="appText.tabs.filtersTab">
+      <div class="control-panel__filters">
+        <app-select-button-group></app-select-button-group>
+      </div>
+    </app-tab>
+    <app-tab [label]="appText.tabs.favTab">
+      <div class="control-panel__details">
+        <app-details-group [detailsGroup]="favoritesGroup"></app-details-group>
+      </div>
+    </app-tab>
+    <app-tab [label]="appText.tabs.likedTab">
+      <div class="control-panel__details">
+        <app-details-group [detailsGroup]="likedGroup"> ></app-details-group>
+      </div>
+    </app-tab>
+  </app-tab-group>
+</div>

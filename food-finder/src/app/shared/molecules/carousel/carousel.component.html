@@ -1,0 +1,48 @@
+<div>
+  <swiper
+    [observeParents]="true"
+    [observeSlideChildren]="true"
+    [slidesPerView]="3"
+    [slidesPerGroup]="1"
+    [centeredSlides]="true"
+    [preventClicks]="true"
+    [touchMoveStopPropagation]="true"
+    [shortSwipes]="false"
+    [touchRatio]="0.25"
+    [longSwipesMs]="75"
+    [longSwipesRatio]="0.01"
+    [spaceBetween]="0"
+    [keyboard]="true"
+    [effect]="'coverflow'"
+    [speed]="350"
+    [coverflowEffect]="{
+      rotate: 0,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: false
+    }"
+    class="mySwiper"
+  >
+    <ng-template swiperSlide *ngFor="let card of cards; index as i">
+      <app-food-card
+        class="card"
+        [id]="card.id"
+        [image]="card.img"
+        [description]="card.name"
+        [price]="card.price"
+        [quantity]="card.quantity"
+        [style.opacity]="setSlideVisibility(i)"
+        [favoriteList]="favoriteList"
+        (handleButtonClick)="skip()"
+        (handleLikeButtonClick)="like(i)"
+        (handleFavoriteButtonClick)="addToFavorites(card)"
+        (handleDislikeClick)="dislike(i)"
+      ></app-food-card>
+    </ng-template>
+  </swiper>
+</div>
+
+<div *ngIf="isLoading">
+  <app-spinner modifier="large"></app-spinner>
+</div>

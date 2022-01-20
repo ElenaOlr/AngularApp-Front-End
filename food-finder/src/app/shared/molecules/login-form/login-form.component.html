@@ -1,0 +1,40 @@
+<div class="login">
+  <div class="login__header">
+    <app-icon-button icon="button__logo" customClass="button-logo"></app-icon-button>
+    <h2 class="login__title">{{ appText.title.login }}</h2>
+  </div>
+  <form [formGroup]="loginForm" class="login__form">
+    <app-input
+      [control]="email"
+      type="text"
+      [placeholder]="appText.inputPlaceholder.email"
+      [message]="getErrorMessageEmail(email)"
+      [showErrorMessage]="showErrorMessage"
+    ></app-input>
+    <app-input
+      [control]="password"
+      type="password"
+      [message]="getErrorMessagePassword(password)"
+      [placeholder]="appText.inputPlaceholder.password"
+      [showErrorMessage]="showErrorMessage"
+    ></app-input>
+  </form>
+  <app-checkbox class="login__checkbox" [label]="appText.checkboxText.keep"></app-checkbox>
+  <div class="login__buttons">
+    <app-button
+      (click)="signIn()"
+      class="login__button"
+      modifier="grow capitalize"
+      [label]="appText.buttonText.continue"
+    ></app-button>
+    <p class="login__text--italic">{{ appText.registration.or }}</p>
+    <app-button
+      (click)="googleSignIn()"
+      class="login__button"
+      modifier="grow"
+      image="/assets/img/google.svg"
+      [label]="appText.buttonText.logInWith"
+    ></app-button>
+  </div>
+  <a href="#" class="login__anchor">{{ appText.registration.signUp }}</a>
+</div>

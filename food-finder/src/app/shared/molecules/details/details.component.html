@@ -1,0 +1,38 @@
+<details class="details__element">
+  <summary class="summary__details">
+    <span>
+      {{ details.name }}
+    </span>
+    <app-icon-button
+      class="summary__delete"
+      icon="button__delete"
+      customClass="button-delete"
+      (click)="onDeleteButtonClick(details)"
+    ></app-icon-button>
+  </summary>
+  <div class="container__details">
+    <div class="section">
+      <div class="image">
+        <img [src]="mime + ',' + details.img" class="image__content" />
+      </div>
+      <div class="content">
+        <ng-container *ngFor="let item of details | keyvalue: keepOriginalOrder">
+          <div *ngIf="shouldDisplayField(item.key)" class="content__details">
+            <span class="content__details__text"> {{ item.key }}</span>
+            <p>{{ item.value }}</p>
+            <span *ngIf="getUnit(item.key)">{{ getUnit(item.key) }}</span>
+          </div>
+        </ng-container>
+        <div class="content__btn">
+          <a class="content__btn__details" [href]="details.link" target="_blank">
+            <app-button
+              [label]="appText.buttonText.goTo"
+              class="content__btn__details"
+              modifier="round gradient"
+            ></app-button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</details>

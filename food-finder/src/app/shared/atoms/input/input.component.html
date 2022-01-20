@@ -1,0 +1,24 @@
+<div class="container">
+  <input
+    [formControl]="formControl"
+    [type]="type"
+    [(ngModel)]="inputValue"
+    class="container__input container__input--primary"
+    required
+    (keyup)="errorMessage = ''"
+    (focusout)="validateInput()"
+    [ngClass]="{ 'container__input--error': errorMessage }"
+  />
+  <div class="container-placeholder">
+    <span class="container-placeholder__text"> {{ placeholder }} </span>
+  </div>
+
+  <div *ngIf="errorMessage" class="error-container">
+    <img
+      src="../../../assets/img/icon-error.svg"
+      [alt]="errorIconMesage"
+      class="error-container__image"
+    />
+    <span>{{ errorMessage }}</span>
+  </div>
+</div>

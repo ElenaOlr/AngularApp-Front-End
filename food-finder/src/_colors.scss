@@ -1,0 +1,50 @@
+@function simpleGradient($deg, $color1, $color2) {
+  $gradient: linear-gradient($deg, $color1 0%, $color2 100%);
+  @return $gradient;
+}
+
+@function gray($level) {
+  @return lighten(black, $level * 1%);
+}
+
+$primary: #d49e8d;
+$primary-light: #e1bbaf;
+$primary-dark: #aa7e71;
+$primary-darker: #683b2b;
+
+$secondary: #ede4d6;
+$secondary-light: #f1e9de;
+$secondary-dark: #beb6ab;
+$secondary-darker: #8e8980;
+
+$primary-hover: rgba(191, 142, 127, 0.7);
+$secondary-hover: rgba(212, 158, 141, 0.69);
+
+$color-warning: #940128;
+
+$black: #000;
+$white: #fff;
+
+$shadow: #00000040;
+
+$modal-background: rgba(98, 95, 95, 0.75);
+
+$color-gray-95: gray(95);
+$color-gray-90: gray(90);
+$color-gray-80: gray(80);
+$color-gray-70: gray(70);
+$color-gray-60: gray(60);
+$color-gray-50: gray(50);
+$color-gray-40: gray(40);
+$color-gray-30: gray(30);
+$color-gray-20: gray(20);
+$color-gray-10: gray(10);
+$color-gray-5: gray(5);
+
+$input-gradient-darker: linear-gradient(90deg, $primary-darker, $primary-darker) center bottom/0 2px
+  no-repeat;
+$input-gradient-gray: linear-gradient(90deg, $color-gray-20, $color-gray-20) left bottom/100% 2px
+  no-repeat;
+$input-gradient-transparent: linear-gradient(90deg, transparent, transparent) left bottom/100% no-repeat;
+$input-gradient-warning: linear-gradient(90deg, $color-warning, $color-warning) center bottom/0 2px
+  no-repeat;

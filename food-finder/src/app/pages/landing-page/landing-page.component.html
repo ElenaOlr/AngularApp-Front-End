@@ -1,0 +1,41 @@
+<div class="landing-page">
+  <app-header (click)="openLoginDialog($event)"></app-header>
+  <h1 class="landing-page__description">{{ descriptionLandingPage }}</h1>
+  <app-button
+    class="landing-page__create-account"
+    [label]="appText.title.createAccount"
+    modifier="grow"
+    (click)="openRegisterDialog()"
+  ></app-button>
+  <div class="landing-page__card">
+    <app-cards
+      [title]="appText.landingPageCards.title1"
+      [description]="appText.landingPageCards.description1"
+    ></app-cards>
+    <app-cards
+      [title]="appText.landingPageCards.title2"
+      [description]="appText.landingPageCards.description2"
+    ></app-cards>
+    <app-cards
+      [title]="appText.landingPageCards.title3"
+      [description]="appText.landingPageCards.description3"
+    ></app-cards>
+  </div>
+  <app-footer></app-footer>
+  <div *ngIf="isRegisterOpen || isLoginOpen" class="landing-page__dialog" (click)="closeDialog()">
+    <div class="button-container">
+      <app-icon-button
+        *ngIf="isRegisterOpen"
+        icon="button__dislike"
+        class="button-container__button-register"
+      ></app-icon-button>
+      <app-icon-button
+        *ngIf="isLoginOpen"
+        icon="button__dislike"
+        class="button-container__button-login"
+      ></app-icon-button>
+    </div>
+    <app-register-form *ngIf="isRegisterOpen" (click)="$event.stopPropagation()"></app-register-form>
+    <app-login-form *ngIf="isLoginOpen" (click)="$event.stopPropagation()"></app-login-form>
+  </div>
+</div>

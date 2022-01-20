@@ -1,0 +1,70 @@
+@import '../../../../colors';
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $white;
+  border: 1px solid $primary-darker;
+  box-shadow: 0px 4px 4px rgba($black, 0.25);
+  border-radius: 10px;
+  width: 300px;
+
+  padding-bottom: 25px;
+
+  &__header {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  &__title {
+    display: inline-block;
+    font-size: 1.25em;
+    margin: 8px 0px;
+    margin-right: 4px;
+    color: $primary-darker;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__checkbox {
+    margin-top: 25px;
+    margin-bottom: 14px;
+    margin-right: 100px;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    font-size: 1.2em;
+  }
+
+  &__button {
+    align-self: center;
+    display: block;
+    margin: 8px 0px;
+    width: 250px;
+  }
+
+  &__text {
+    &--italic {
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+  }
+
+  &__anchor {
+    text-decoration: none;
+    color: $primary-darker;
+    width: 80%;
+    text-align: center;
+    margin-top: 3%;
+  }
+}

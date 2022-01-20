@@ -1,0 +1,51 @@
+<div class="register-container">
+  <app-icon-button icon="button__logo" customClass="button-logo"></app-icon-button>
+  <h2 class="register-container__header">{{ appText.title.createAccount }}</h2>
+  <form [formGroup]="registerForm">
+    <app-input
+      [control]="username"
+      type="text"
+      [placeholder]="appText.inputPlaceholder.username"
+      [message]="getErrorMessageUsername(username)"
+      [showErrorMessage]="showErrorMessage"
+    ></app-input>
+    <app-input
+      [control]="email"
+      type="text"
+      [placeholder]="appText.inputPlaceholder.email"
+      [message]="getErrorMessageEmail(email)"
+      [showErrorMessage]="showErrorMessage"
+    ></app-input>
+    <app-input
+      [control]="password"
+      type="password"
+      [message]="getErrorMessagePassword(password)"
+      [placeholder]="appText.inputPlaceholder.password"
+      [showErrorMessage]="showErrorMessage"
+    ></app-input>
+    <app-input
+      [control]="confirmPassword"
+      type="password"
+      [message]="getErrorMessageConfirmPassword(confirmPassword)"
+      [placeholder]="appText.inputPlaceholder.confirmPassword"
+      [showErrorMessage]="showErrorMessage"
+    ></app-input>
+  </form>
+  <div class="register-container__buttons">
+    <app-button
+      class="register-container__buttons--primary"
+      label="Continue"
+      modifier="grow capitalize"
+      (click)="onSubmit()"
+    ></app-button>
+    <p class="register-container__text--italic">{{ appText.registration.or }}</p>
+    <app-button
+      class="register-container__buttons--primary"
+      label="Sign in with Google"
+      image="/assets/img/google.svg"
+      modifier="grow"
+      (click)="googleSignIn()"
+    ></app-button>
+  </div>
+  <a href="#" class="register-container__anchor">{{ appText.registration.signIn }}</a>
+</div>

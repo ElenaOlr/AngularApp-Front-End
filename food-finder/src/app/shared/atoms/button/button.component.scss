@@ -1,0 +1,161 @@
+@import '../../../../colors';
+
+$imageSize: 18px;
+
+//Overlap gradient & text
+@mixin clipBackground {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+}
+
+@mixin setTextBorder($color) {
+  border-color: $color;
+  color: $color;
+}
+
+.button {
+  padding: 0px 15px;
+  border-radius: 15px;
+  line-height: 30px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+
+  color: $primary-darker;
+  border: 1px solid $primary-darker;
+  background-color: $secondary-light;
+
+  // Ripple effect
+  background-position: center;
+  transition: background 0.5s;
+
+  &:hover {
+    cursor: pointer;
+    @include setTextBorder($color: darken($primary-darker, 10%));
+
+    //Hide radial gradient until button is pressed
+    background: lighten($secondary-hover, 20%)
+      radial-gradient(circle, transparent 1%, lighten($primary-light, 10%) 1%) center/15000%;
+  }
+
+  &:active {
+    background-color: lighten($secondary-hover, 20%);
+    background-size: 100%;
+    transition: background 0s; //show radial gradient when button is pressed
+  }
+
+  &:disabled {
+    @include setTextBorder($color: gray(60));
+    background-color: lighten($secondary-light, 4%);
+    pointer-events: none;
+    cursor: default;
+  }
+
+  &__label {
+    background-color: transparent;
+    pointer-events: none;
+  }
+
+  &--disabled {
+    @extend .button, :disabled;
+  }
+
+  &--gradient {
+    color: $primary-darker;
+    background: $secondary;
+    transition: 0s;
+
+    &:hover {
+      color: $primary-darker;
+      background: simpleGradient(180deg, $secondary, lighten($secondary-hover, 10%));
+    }
+    &:active {
+      background: simpleGradient(0deg, $secondary, $secondary-hover);
+    }
+  }
+
+  &--text-image {
+    color: $primary-darker;
+    background-color: $secondary-light;
+
+    &:hover {
+      background-color: gray(98);
+    }
+  }
+
+  &__image {
+    background-color: transparent;
+    margin-bottom: 2px;
+    margin-right: 6px;
+    width: $imageSize;
+    height: $imageSize;
+  }
+
+  &--image-right {
+    .button__image {
+      margin-right: 0;
+      margin-left: 6px;
+      order: 1;
+      pointer-events: none;
+    }
+  }
+
+  &--dashed {
+    border: 1px dashed $primary-dark;
+  }
+
+  &--square {
+    border-radius: 10px;
+  }
+
+  &--wide {
+    padding: 0px 60px;
+    letter-spacing: 0.03rem;
+    font-size: 1.25rem;
+    line-height: 36px;
+  }
+
+  &--tall {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  &--sharp {
+    border-radius: 0;
+  }
+
+  &--round {
+    border-radius: 20px;
+  }
+
+  &--rounder {
+    border-radius: 100px;
+  }
+
+  &--light {
+    font-weight: 300;
+  }
+
+  &--regular {
+    font-weight: 400;
+  }
+
+  &--semibold {
+    font-weight: 600;
+  }
+
+  &--capitalize {
+    text-transform: capitalize;
+  }
+
+  &--uppercase {
+    text-transform: uppercase;
+  }
+
+  &--grow {
+    flex: 1;
+    width: 100%;
+  }
+}

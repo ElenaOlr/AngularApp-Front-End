@@ -1,0 +1,37 @@
+@import '../../../../colors';
+
+.spinner {
+  margin: auto;
+  margin-top: 30vh;
+  border: 16px solid $white;
+  border-radius: 50%;
+  border-top: 16px solid $primary-darker;
+  animation: spin 2s linear infinite;
+  &--small {
+    width: 30px;
+    height: 30px;
+  }
+  &--medium {
+    width: 60px;
+    height: 60px;
+  }
+  &--large {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .spinner {
+    margin-top: 10vh;
+  }
+}

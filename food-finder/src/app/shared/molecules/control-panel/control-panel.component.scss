@@ -1,0 +1,32 @@
+@import '../../../../colors';
+.control-panel {
+  &__container {
+    height: 80vh;
+    margin-left: 20px;
+    width: 30vw;
+    min-width: 400px;
+    border-radius: 15px;
+    border: 0.1px solid $primary-darker;
+    overflow-y: scroll;
+  }
+  &__details {
+    height: 70vh;
+    overflow-y: scroll;
+    padding: 0 10px 0 10px;
+  }
+  &__filters {
+    height: 80vh;
+    display: flex;
+    overflow: none;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .control-panel {
+    &__container {
+      width: 50vw;
+      min-width: 300px;
+      margin-left: 0px;
+    }
+  }
+}

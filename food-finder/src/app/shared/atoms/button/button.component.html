@@ -1,0 +1,6 @@
+<button [ngClass]="getButtonClass()" (click)="handleButtonClick()">
+  <img *ngIf="image" class="button__image" [src]="image" />
+  <span class="button__label">
+    {{ label }}
+  </span>
+</button>

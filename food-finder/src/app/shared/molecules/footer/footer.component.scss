@@ -1,0 +1,46 @@
+@import '../../../../colors';
+
+.footer {
+  background-color: $secondary-light;
+  display: grid;
+  grid-template-columns: 6fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 'copyrights social';
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  position: fixed;
+
+  &__copyrights {
+    text-align: center;
+    padding: 5px;
+    grid-area: copyrights;
+  }
+
+  &__social {
+    grid-area: social;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-self: right;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'social' 'copyrights';
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    height: 10;
+
+    &__social {
+      justify-self: center;
+    }
+  }
+}

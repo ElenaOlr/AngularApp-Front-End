@@ -1,0 +1,8 @@
+<div class="container__details">
+  <app-details
+    *ngFor="let selectDetail of detailsGroup"
+    [details]="selectDetail"
+    class="details__group"
+    (handleDeleteButtonClick)="deleteFood($event)"
+  ></app-details>
+</div>

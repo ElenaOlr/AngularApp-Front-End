@@ -1,0 +1,13 @@
+<div class="tab-group">
+  <div class="tab-group__navbar">
+    <div
+      class="tab-header"
+      *ngFor="let tab of tabs; index as i; first as isFirst"
+      (click)="selectTab(tab); moveInkBar(i)"
+    >
+      <span class="tab-header__label">{{ tab.label }}</span>
+      <div #inkBar *ngIf="isFirst" class="tab-header__ink-bar"></div>
+    </div>
+  </div>
+  <ng-content></ng-content>
+</div>

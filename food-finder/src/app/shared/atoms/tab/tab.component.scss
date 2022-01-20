@@ -1,0 +1,9 @@
+.tab--active {
+  position: relative;
+  overflow-x: hidden;
+  flex-grow: 1;
+}
+
+.tab--hidden {
+  display: none;
+}

@@ -1,0 +1,49 @@
+@import '../../../../colors';
+
+.select-button {
+  cursor: pointer;
+  user-select: none;
+  padding: 8px 16px;
+  margin: 10px;
+  border-radius: 30px;
+  color: $primary-darker;
+  background-color: $secondary;
+  border: 2px solid $primary-dark;
+  display: inline-block;
+
+  transition: all 0.2s;
+
+  &:hover {
+    background: $secondary-hover;
+    border-color: $primary-darker;
+  }
+
+  &--checked {
+    background-color: $primary;
+    color: $white;
+
+    &:hover {
+      background: $primary-dark;
+    }
+  }
+  &--small {
+    font-size: 0.8rem;
+  }
+  &--medium {
+    font-size: 1rem;
+  }
+  &--large {
+    font-size: 1.2rem;
+  }
+  &--disabled {
+    color: $color-gray-60;
+    background-color: lighten($secondary-light, 4%);
+    border-color: $color-gray-60;
+    pointer-events: none;
+    cursor: default;
+
+    &:hover {
+      @extend .select-button--disabled;
+    }
+  }
+}

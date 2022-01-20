@@ -1,0 +1,9 @@
+<label [ngClass]="class">
+  <input
+    type="checkbox"
+    [hidden]="true"
+    [disabled]="disabled"
+    [name]="selectedButton.name"
+    (change)="onCheckboxChange()"
+  />{{ selectedButton.name | capitalize }}
+</label>

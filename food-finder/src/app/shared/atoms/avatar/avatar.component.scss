@@ -1,0 +1,26 @@
+@import '../../../../colors';
+$gradient: linear-gradient($secondary-light, $secondary 0%, $secondary-hover 100%);
+$color-gray-95: gray(95);
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 14px;
+  color: $primary-darker;
+  text-align: center;
+  background: $secondary-light;
+  border: 1px solid;
+  border-color: $primary-darker;
+  cursor: pointer;
+}
+
+.avatar:hover {
+  background-image: $gradient;
+  border: 1px solid;
+  border-color: $primary-darker;
+  color: $primary-darker;
+  &:active {
+    background: simpleGradient(0deg, $secondary, $secondary-hover);
+  }
+}

@@ -1,0 +1,105 @@
+@import '../../../../colors';
+
+@keyframes smoothScale {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+.button {
+  border: 1px solid $primary-darker;
+  height: 42px;
+  margin: 10px;
+  width: 42px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $secondary-light;
+  cursor: pointer;
+  .button__image {
+    background-color: transparent;
+  }
+
+  &:hover {
+    background: simpleGradient(180deg, $secondary, $secondary-hover);
+
+    .button__image {
+      animation: smoothScale 0.25s forwards;
+      background-color: transparent;
+    }
+  }
+
+  &:active {
+    background: $primary-light;
+
+    .button__image {
+      background-color: transparent;
+    }
+  }
+}
+
+.svg-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.button.button-logo {
+  border: none;
+  background: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  justify-content: initial;
+
+  &:hover {
+    background: none;
+
+    .button__image {
+      animation: none;
+    }
+  }
+  &:active {
+    background: none;
+  }
+  .svg-icon {
+    width: 130px;
+    height: 80px;
+  }
+}
+
+.button-social {
+  border: none;
+  background: none;
+  width: 20px;
+  height: 20px;
+
+  &:hover {
+    background: none;
+  }
+}
+
+.button-disabled {
+  pointer-events: none;
+  cursor: pointer;
+  background: $color-gray-60;
+  filter: brightness(90%) img {
+    background-color: transparent;
+  }
+}
+
+.button-delete {
+  border: none;
+  background: none;
+
+  &:hover {
+    background: none;
+  }
+  .svg-icon {
+    width: 20px;
+    height: 20px;
+  }
+}

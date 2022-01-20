@@ -1,0 +1,53 @@
+<div #card class="card" [ngClass]="{ 'card--empty': !image }">
+  <ng-container *ngIf="image">
+    <img [src]="mime + ',' + image" class="card__image" />
+    <div class="container">
+      <div class="card__title">{{ title }}</div>
+      <div class="card__description">
+        <div class="card__description-name">
+          {{ description }}
+        </div>
+        <div class="card__description-details">
+          <div class="card__description-details-price">
+            <span>{{ appText.details.label.price }} </span> {{ price }}
+            <span>{{ appText.details.units.price }}</span>
+          </div>
+          <div class="card__description--details--quantity">
+            <span>{{ appText.details.label.quantity }} </span> {{ quantity }}
+            <span>{{ appText.details.units.quantity }}</span>
+          </div>
+        </div>
+      </div>
+      <div class="card__buttons">
+        <div [ngStyle]="clicked ? { 'pointer-events': 'none' } : {}">
+          <app-icon-button
+            *ngIf="clicked"
+            icon="button__like"
+            (click)="onLikeButtonClick()"
+            customClass="button-disabled"
+          ></app-icon-button>
+          <app-icon-button
+            *ngIf="!clicked"
+            icon="button__like"
+            (click)="onLikeButtonClick()"
+          ></app-icon-button>
+        </div>
+        <app-icon-button icon="button__dislike" (click)="onDislikeButtonClick()"></app-icon-button>
+        <div [ngStyle]="clickedFavorite ? { 'pointer-events': 'none' } : {}">
+          <app-icon-button
+            *ngIf="clickedFavorite"
+            icon="button__favorite"
+            (click)="onFavoriteButtonClick()"
+            customClass="button-disabled"
+          ></app-icon-button>
+          <app-icon-button
+            *ngIf="!clickedFavorite"
+            icon="button__favorite"
+            (click)="onFavoriteButtonClick()"
+          ></app-icon-button>
+        </div>
+        <app-icon-button icon="button__skip" (click)="onButtonClick()"></app-icon-button>
+      </div>
+    </div>
+  </ng-container>
+</div>

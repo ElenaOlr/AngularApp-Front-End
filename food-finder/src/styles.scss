@@ -1,0 +1,21 @@
+@import './colors';
+@import '~ngx-toastr/toastr.css';
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+*,
+*::after,
+*::before {
+  font-family: 'Nunito Sans', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: gray(98);
+}
+
+img {
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  user-select: none;
+}

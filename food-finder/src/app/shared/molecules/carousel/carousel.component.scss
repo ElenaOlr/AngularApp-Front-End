@@ -1,0 +1,50 @@
+@import '~swiper/css';
+
+.swiper {
+  width: 60vw;
+  height: 100%;
+  margin: 4% 0px;
+}
+
+.card--disabled {
+  filter: brightness(0.8) ;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+  .card {
+    transform: scale(0.95);
+    filter: blur(1.5px);
+    transition: all 500ms;
+  }
+
+  &-active {
+    z-index: 1;
+    .card {
+      transform: scale(1);
+      filter: blur(0);
+    }
+  }
+
+  &-prev {
+    transform: translateX(25%);
+    pointer-events: none;
+  }
+  &-next {
+    transform: translateX(-25%);
+    pointer-events: none;
+  }
+}
+
+
+@media screen and (max-width: 900px) {
+  .swiper {
+    width: 80vw;
+    margin: 2% 0px;
+  }
+}

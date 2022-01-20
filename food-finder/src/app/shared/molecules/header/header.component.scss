@@ -1,0 +1,29 @@
+@import '../../../../colors';
+
+.header {
+  display: flex;
+  background-color: $secondary-light;
+  padding: 1px;
+  justify-content: space-between;
+  align-content: center;
+  top: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 5;
+  left: 0;
+
+  &__logo {
+    align-items: center;
+    margin-top: 2px;
+  }
+
+  &__buttons {
+    display: flex;
+    margin-right: 10px;
+    align-items: center;
+  }
+
+  &__avatar {
+    margin-right: 10px;
+  }
+}

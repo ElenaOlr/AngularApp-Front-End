@@ -1,0 +1,54 @@
+@import '../../../../colors';
+
+$border-size: 2px;
+
+.tab-group {
+  display: flex;
+  flex-direction: column;
+
+  &__navbar {
+    margin-top: 4px;
+    display: flex;
+    justify-content: space-evenly;
+    line-height: 36px;
+    border-bottom: $border-size solid rgba($primary, 0.3);
+    background-clip: padding-box;
+
+    .tab-header {
+      background-color: transparent;
+      position: relative;
+      padding: 0px 10px;
+      text-align: center;
+      flex: 1 1 0px;
+
+      &:not(:active) {
+        background-color: transparent;
+        transition: background-color 0.5s ease;
+      }
+
+      &:active {
+        background-color: rgba($color-gray-90, 0.5);
+        transition-duration: 0s;
+        border-radius: 4px;
+      }
+
+      &__label {
+        color: $primary-darker;
+        padding: 6px;
+        background-color: transparent;
+        cursor: pointer;
+        pointer-events: none;
+      }
+
+      &__ink-bar {
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        bottom: -$border-size;
+        left: 0%;
+        background-color: $primary;
+        transition: 0.5s ease;
+      }
+    }
+  }
+}

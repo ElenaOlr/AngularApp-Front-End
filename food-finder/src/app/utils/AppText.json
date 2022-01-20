@@ -1,0 +1,87 @@
+{
+  "altMessages": {
+    "errorIconMessage": "Error Icon"
+  },
+  "title": {
+    "login": "Login",
+    "createAccount": "Create Account"
+  },
+  "buttonText": {
+    "continue": "Continue",
+    "logInWith": "Log in with Google",
+    "goTo": "Go to the restaurant"
+  },
+  "checkboxText": {
+    "keep": "Keep me Signed In"
+  },
+  "registration": {
+    "signUp": "New user? Sign up to create your account",
+    "signIn": "Already have an account? Log in",
+    "or": "Or...",
+    "register": {
+      "username": {
+        "placeholder": "Username",
+        "errorMessage": "The username must contain between 3 and 25 characters."
+      },
+      "password": {
+        "placeholder": "Password",
+        "errorMessage": "The password must contain minimum 8 characters, at least one letter and one number."
+      },
+      "confirmPassword": {
+        "placeholder": "Confirm password",
+        "errorMesage": "Password doesn't match."
+      },
+      "email": {
+        "placeholder": "Email",
+        "errorMessage": "The email is not valid."
+      },
+      "mandatory": "This field is mandatory."
+    }
+  },
+  "inputPlaceholder": {
+    "username": "Username",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "email": "Email"
+  },
+  "copyrights": {
+    "copyrightsText": "© 2021 FoodFinder/ FoodFinder and the FoodFinder logo are registered trademarks of Foodfinder, Inc., all rights reserved."
+  },
+  "login": {
+    "loginButtonLabel": "Log In",
+    "logoutButtonLabel": "Log Out"
+  },
+  "landingPageCards": {
+    "title1": "Provide healthy food ",
+    "title2": "Endless possibilities",
+    "title3": "Love at first bite",
+    "description1": "The best way to fight against the Coronavirus is to boost your immunity. A lot of people have turned toward healthy diets for the same. Eating healthy meals like vegetable salads, fruits, food made in olive oil, is known to help increase immunity. We provide healthy options in our menus.",
+    "description2": "With more than 55 billion matches to date, we’re no stranger to bringing your favorite food in your face. On the FoodFinder app, we’re all about the experience and offer possibilities for whatever it is you’re looking for.",
+    "description3": "Food can be very transformational, and it can be more than just about a dish. That’s what is going to happened with you when you are going to use FoodFinder. You will fell in love. And if you fall in love, well, then everything is easy."
+  },
+  "descriptions": {
+    "descriptionLandingPage": "Looking for help with food?"
+  },
+  "details": {
+    "label": {
+      "price": "Price:",
+      "quantity": "Quantity:"
+    },
+    "units": {
+      "quantity": "g",
+      "price": "RON"
+    }
+  },
+  "tabs": {
+    "likedTab": "Liked",
+    "favTab": "Favorites",
+    "filtersTab": "Filters"
+  },
+  "toastrMessage": {
+    "registerErrorTitle": "You have invalid inputs.",
+    "registerErrorMessage": "Correct them before submitting the form.",
+    "registerSuccessTitle": "Registration completed successfully.",
+    "loginSuccessTitle": "Login succesfully.",
+    "loginErrorTitle": "Invalid email or password."
+  }
+}

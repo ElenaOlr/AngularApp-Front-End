@@ -1,0 +1,12 @@
+<div class="checkbox">
+  <input
+    class="checkbox__input"
+    [checked]="checked"
+    type="checkbox"
+    id="{{ label }}"
+    (click)="onChangeCheckbox()"
+  />
+  <label for="{{ label }}" class="checkbox__label">
+    {{ label }}
+  </label>
+</div>
